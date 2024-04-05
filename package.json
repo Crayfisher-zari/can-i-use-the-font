@@ -1,0 +1,20 @@
+{
+  "name": "can-i-use-the-font",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "author": "Nishihara Tsubasa",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build-docs": "tsc && vite build --mode doc",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "20.12.4",
+    "dotenv": "16.4.5",
+    "prettier": "3.2.5",
+    "typescript": "5.2.2",
+    "vite": "5.2.0"
+  }
+}
