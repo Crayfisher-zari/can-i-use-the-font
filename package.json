@@ -5,7 +5,7 @@
   "type": "module",
   "author": "Nishihara Tsubasa",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "tsc && vite build",
     "build-docs": "tsc && vite build --mode doc",
     "preview": "vite preview"
