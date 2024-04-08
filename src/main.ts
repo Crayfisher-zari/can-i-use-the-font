@@ -2,14 +2,14 @@
 import AdobeBlank from "./fonts/AdobeBlank.otf.woff";
 
 /**
- * フォントが利用可能かどうかを検出する
+ * Detect the font is available
  * @param fontName
  */
 export const isFontAvailable = async (fontName: string) => {
   const canvas = document.createElement("canvas");
   const context = canvas?.getContext("2d");
   if (!context) {
-    return;
+    throw new Error("canvas is missing!")
   }
 
   // フォントの読み込み
