@@ -5,7 +5,7 @@ import AdobeBlank from "./fonts/AdobeBlank.otf.woff";
  * フォントが利用可能かどうかを検出する
  * @param fontName
  */
-export const isAvailableThisFont = async (fontName: string) => {
+export const isFontAvailable = async (fontName: string) => {
   const canvas = document.createElement("canvas");
   const context = canvas?.getContext("2d");
   if (!context) {

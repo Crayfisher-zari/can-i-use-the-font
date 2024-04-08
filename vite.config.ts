@@ -1,9 +1,11 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
 import "dotenv/config";
+import dts from 'vite-plugin-dts'
 
 export default defineConfig(({ mode }) => {
   return {
+    plugins:[dts()],
     base: process.env?.BASE_PATH ?? "/",
     build: {
       outDir: mode === "doc" ? "docs" : "dist",
@@ -12,8 +14,8 @@ export default defineConfig(({ mode }) => {
           ? undefined
           : {
               entry: resolve(__dirname, "src/main.ts"),
-              name: "canUseTheFont",
-              fileName: "can-use-the-font",
+              name: "isFontAvailable",
+              fileName: "is-font-available",
             },
       rollupOptions: {
         input: mode === "doc" ? resolve(__dirname, "index.html") : undefined,

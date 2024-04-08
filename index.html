@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=360, initial-scale=1.0" />
-    <title>Can Use The Font Demo</title>
+    <title>is Font Available Demo</title>
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
@@ -20,7 +20,7 @@
     </div>
     <script type="module" src="/src/main.ts"></script>
     <script type="module">
-      import { isAvailableThisFont } from "/src/main";
+      import { isFontAvailable } from "/src/main";
       const inputElement = document.querySelector("input");
       const resultElement = document.getElementById("result");
       document.getElementById("button").addEventListener("click", async (e) => {
@@ -29,7 +29,7 @@
         if (fontName === "") {
           return;
         }
-        const result = await isAvailableThisFont(fontName);
+        const result = await isFontAvailable(fontName);
         const text = `${fontName} is ${result ? "available" : "not available"}`;
         resultElement.textContent = text;
         resultElement.style.fontFamily = result ? fontName : "inherit"
