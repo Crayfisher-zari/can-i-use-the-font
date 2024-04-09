@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Using web font when the local font is not available</h1>
+    <p>
+      This page applied Noto Sans JP font. If you installed the font, using
+      local font file without server. If you do not installed, the font file
+      using server's.
+    </p>
+    <p>
+      <small
+        >note: Safari is not available user installed font. So watching this
+        page with Safari, using web font with network.</small
+      >
+    </p>
+    <script type="module">
+      import { isFontAvailable } from "/src/main";
+      import NotoSansJp from "./NotoSansJP-Regular.ttf";
+      const NOTO_SANS_JP = "Noto Sans JP";
+      (async () => {
+        const isAvailableNotoSansJp = await isFontAvailable(NOTO_SANS_JP);
+        if (!isAvailableNotoSansJp) {
+          const notoSansJpFont = new FontFace(
+            NOTO_SANS_JP,
+            `url(${NotoSansJp})`,
+            { weight: "400", style: "normal" }
+          );
+          await notoSansJpFont.load();
+          document.fonts.add(notoSansJpFont);
+        }
+        document.body.style.fontFamily = NOTO_SANS_JP;
+      })();
+    </script>
+  </body>
+</html>

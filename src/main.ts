@@ -1,5 +1,5 @@
 // 幅0のフォント
-import AdobeBlank from "./fonts/AdobeBlank.otf.woff";
+import AdobeBlank from "/src/fonts/AdobeBlank.otf.woff";
 
 /**
  * Detect the font is available

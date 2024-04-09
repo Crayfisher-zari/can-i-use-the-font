@@ -1,5 +1,5 @@
 {
-  "name": "can-i-use-the-font",
+  "name": "is-font-available",
   "version": "1.0.0",
   "type": "module",
   "author": "Nishihara Tsubasa",
@@ -9,12 +9,19 @@
       "require": "./dist/is-font-available.umd.cjs"
     }
   },
+  "files": ["dist"],
   "types": "./dist/main.d.ts",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Crayfisher-zari/is-font-available.git"
+    "url": "git+https://github.com/Crayfisher-zari/is-font-available.git"
   },
+  "keywords": [
+    "JavaScript",
+    "TypeScript",
+    "Font",
+    "CSS"
+  ],
   "scripts": {
     "dev": "vite --host",
     "build": "tsc && vite build",

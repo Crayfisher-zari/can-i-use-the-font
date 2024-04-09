@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=360, initial-scale=1.0" />
+    <title>is Font Available Demo</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="wrapper">
+        <h1>Input the font name</h1>
+        <form class="inputWrapper" action="#">
+          <input type="search" placeholder="Helvetica" />
+          <button id="button" type="submit">Submit</button>
+        </form>
+
+        <p>Result: <span id="result"></span></p>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+    <script type="module">
+      import { isFontAvailable } from "/src/main";
+      const inputElement = document.querySelector("input");
+      const resultElement = document.getElementById("result");
+      document.getElementById("button").addEventListener("click", async (e) => {
+        e.preventDefault();
+        const fontName = inputElement.value;
+        if (fontName === "") {
+          return;
+        }
+        const result = await isFontAvailable(fontName);
+        const text = `${fontName} is ${result ? "available" : "not available"}`;
+        resultElement.textContent = text;
+        resultElement.style.fontFamily = result ? fontName : "inherit"
+      });
+    </script>
+  </body>
+</html>
